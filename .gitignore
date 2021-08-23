@@ -1,0 +1,43 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.swp
+
+pids
+logs
+results
+tmp
+
+# Coverage reports
+coverage
+
+# Environment file
+.env
+
+node_modules
+
+# Editors
+.idea
+*.iml
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Ignore built ts files
+**/dist/**/*
+
+packages/*/lib
+dist.zip
+
+run/*
+!run/.gitkeep
+!run/urls.yml
