@@ -87,13 +87,13 @@ const shopifyScraper: IScraperConstructor<TCallbacks, { currency?: string }> =
       /**
        * Add the description as mainDescription additionalSection
        */
-      if (providerProduct.description) {
-        product.addAdditionalSection({
-          name: 'Description',
-          content: providerProduct.description,
-          description_placement: DESCRIPTION_PLACEMENT.MAIN,
-        })
-      }
+      // if (providerProduct.description) {
+      //   product.addAdditionalSection({
+      //     name: 'Description',
+      //     content: providerProduct.description,
+      //     description_placement: DESCRIPTION_PLACEMENT.MAIN,
+      //   })
+      // }
 
       /**
        * Add other sections obtained in the productFn
@@ -202,7 +202,7 @@ const shopifyScraper: IScraperConstructor<TCallbacks, { currency?: string }> =
       product.bullets = [
         ...new Set([
           ...(product.bullets || []),
-          ...product.additionalSections.map(section => htmlToTextArray(section.content)).flat(),
+          // ...product.additionalSections.map(section => htmlToTextArray(section.content)).flat(),
         ]),
       ]
 
