@@ -1,6 +1,5 @@
 import { debug } from 'console'
 import { DESCRIPTION_PLACEMENT } from '../../interfaces/outputProduct'
-import { getSelectorOuterHtml } from '../../providerHelpers/getSelectorOuterHtml'
 import { getProductOptions } from '../shopify/helpers'
 import shopifyScraper, { TShopifyExtraData } from '../shopify/scraper'
 
@@ -28,7 +27,7 @@ export default shopifyScraper(
       }
       /**
        * Get additional descriptions
-       */      
+       */
       extraData.additionalSections = []
       // Main description
       let description = await page.evaluate(() => {
@@ -56,8 +55,8 @@ export default shopifyScraper(
         // parraphs Array.from(document.querySelectorAll('.description p'))
         let listExtra = Array.from(document.querySelectorAll('.description p'))
         listExtra.shift()
-        console.log("list extra", listExtra)
-        if(listExtra.length <= 0){
+        console.log('list extra', listExtra)
+        if (listExtra.length <= 0) {
           listExtra = Array.from(document.querySelectorAll('.description > span'))
         }
 
@@ -67,7 +66,7 @@ export default shopifyScraper(
           container.append(...listExtra)
         }
 
-        if(container.outerHTML == '<div></div>') return
+        if (container.outerHTML == '<div></div>') return
 
         return container.outerHTML
       })
@@ -110,9 +109,8 @@ export default shopifyScraper(
             .trim() || ''
         )
       })
-      // product.color = "hola"
+
       if (color) {
-        // console.log(color)
         product.color = color
       }
 
